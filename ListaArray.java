@@ -1,11 +1,14 @@
 import java.util.Scanner;
 
+
+
 public class ListaArray implements EstruturaDeDados{
    private  int [] elementos;
    private  int contador ;
    Scanner leitor = new Scanner(System.in);
+    private int chave;
     public ListaArray(){
-       elementos = new int[1000];
+       elementos = new int[5];
        contador = 0;
         
     }
@@ -51,14 +54,24 @@ public class ListaArray implements EstruturaDeDados{
 
     @Override
     public int minimum() {
-        // TODO Auto-generated method stub
-        return 0;
+        int chave = 0 ;
+        for (int i = 0;i <elementos.length;i++){
+            if(elementos[i]<=elementos[0]){
+                chave = elementos[i];
+            }
+        }return chave;
     }
 
     @Override
     public int maximum() {
-        // TODO Auto-generated method stub
-        return 0;
+        int chave = 0 ;
+       for (int i= 0; i<elementos.length;i++) {
+        if(elementos[i]>chave){
+            chave = elementos[i];
+        }
+       } 
+       return chave;
+      
     }
 
     @Override
@@ -75,10 +88,17 @@ public class ListaArray implements EstruturaDeDados{
 
     public static void main(String[] args) {
         ListaArray r = new ListaArray();
-        r.insert(445);
-        System.out.println(r.search(445));
-        r.search(455);
-        r.delete(445);
-        System.out.println(r.search(445));
+        r.insert(12);
+        r.insert(5);
+        r.insert(7859636);
+        r.insert(895547822);
+        r.insert(3);
+        r.maximum();
+        System.out.println(r.maximum());
+        System.out.println(r.minimum());
+    
+        
+        
+    
     }
 }
