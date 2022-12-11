@@ -8,7 +8,7 @@ public class ListaArray implements EstruturaDeDados{
    Scanner leitor = new Scanner(System.in);
     private int chave;
     public ListaArray(){
-       elementos = new int[5];
+       elementos = new int[7];
        contador = 0;
         
     }
@@ -56,7 +56,7 @@ public class ListaArray implements EstruturaDeDados{
     public int minimum() {
         int chave = 0 ;
         for (int i = 0;i <elementos.length;i++){
-            if(elementos[i]<=elementos[0]){
+            if(elementos[i]<elementos[0]){
                 chave = elementos[i];
             }
         }return chave;
@@ -76,26 +76,43 @@ public class ListaArray implements EstruturaDeDados{
 
     @Override
     public int sucessor(int chave) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
+        int a = 0;
+        for(int i = 0;i<elementos.length;i++){
+            if(chave == elementos[i]){
+              a = elementos[i+1] ;
+
+                }
+
+     } return a;
+        } 
+    
 
     @Override
     public int prodessor(int chave) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
+        int a = 0;
+        for(int i = 0;i<elementos.length;i++){
+            if(chave == elementos[i]){
+              a = elementos[i-1] ;
+
+            }
+    }return a;
+}
 
     public static void main(String[] args) {
         ListaArray r = new ListaArray();
-        r.insert(12);
-        r.insert(5);
-        r.insert(7859636);
-        r.insert(895547822);
-        r.insert(3);
-        r.maximum();
+        r.insert(10);
+        r.insert(36);
+        r.insert(22);
+        r.insert(10000);
+        r.insert(30);
+        r.insert(78);
+        r.insert(79);
+        
         System.out.println(r.maximum());
         System.out.println(r.minimum());
+        System.out.println(r.sucessor(22));
+        System.out.println(r.prodessor(78));
+
     
         
         
