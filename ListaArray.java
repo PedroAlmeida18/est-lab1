@@ -56,7 +56,7 @@ public class ListaArray implements EstruturaDeDados{
     public int minimum() {
         int chave = 0 ;
         for (int i = 0;i <elementos.length;i++){
-            if(elementos[i]<elementos[0]){
+            if(elementos[i]<=elementos[0]){
                 chave = elementos[i];
             }
         }return chave;
@@ -100,18 +100,18 @@ public class ListaArray implements EstruturaDeDados{
 
     public static void main(String[] args) {
         ListaArray r = new ListaArray();
-        r.insert(10);
-        r.insert(36);
+        r.insert(18);
+        r.insert(15);
         r.insert(22);
         r.insert(10000);
         r.insert(30);
-        r.insert(78);
-        r.insert(79);
+        r.insert(7);
+        r.insert(9);
         
         System.out.println(r.maximum());
         System.out.println(r.minimum());
-        System.out.println(r.sucessor(22));
-        System.out.println(r.prodessor(78));
+        System.out.println(r.sucessor(15));
+        System.out.println(r.prodessor(30));
 
     
         
